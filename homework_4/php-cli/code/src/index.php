@@ -6,15 +6,17 @@ require_once 'Shelf.php';
 
 $pBook1 = new PaperBook('Лабиринт отражений', ['Лукьяненко С.В.'], 'Фантастика', 1996, 1);
 $pBook2 = new PaperBook('Измененные', ['Лукьяненко С.В.'], 'Фантастика', 2022, 1);
-$dBook1 = new DigitalBook('Золотой телёнок', ['И.Ильф, Е.Петров'], 'Сатира', 1931, 'http://www.digital-book.com/gold-taurus.pdf');
+$pBook3 = new PaperBook('Измененные 2', ['Лукьяненко С.В.'], 'Фантастика', 2022, 1);
+$dBook1 = new DigitalBook('Золотой телёнок', ['И.Ильф', 'Е.Петров'], 'Сатира', 1931, 'http://www.digital-book.com/gold-taurus.pdf');
+$dBook2 = new DigitalBook('Дюна', ['Фрэнк Герберт'], 'Фантастика', 1965, 'http://www.digital-book.com/dune.mp3');
 
 $bShelf = new Shelf(1, 2, 2, []);
 
-// echo $pBook1->getShelfId() . PHP_EOL;
-echo $pBook2->takeBook('Измененные') . PHP_EOL;
-echo $dBook1->getAuthor() . PHP_EOL;
 $bShelf->addBook($pBook1);
-echo $bShelf->getVolume();
+$bShelf->addBook($pBook3);
+$bShelf->addBook($pBook3);
+$bShelf->lookBooksInShelf() . PHP_EOL;
+echo $bShelf->getCountBooks();
 
 
 

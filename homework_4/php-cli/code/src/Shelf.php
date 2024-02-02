@@ -31,19 +31,29 @@ class Shelf
         return $this->volume;
     }
 
-    public function setVolume(int $volume): void
+    public function lookBooksInShelf(): void
     {
-        $this->volume = $volume;
+        if (count($this->books) !== 0) {
+            foreach ($this->books as $book) {
+                echo $book->getName() . PHP_EOL;
+            }
+        } else {
+            echo 'В шкафу №' . $this->getShelfId() . ' нет книг';
+        }
+    }
+
+    public function getCountBooks()
+    {
+        return count($this->books);
     }
 
     public function addBook(PaperBook $book)
     {
         $shelfIdForBook = $book->getShelfId();
-        if ($shelfIdForBook === $this->shelfId && $this->getVolume() !== 0 && $this->getRoomId()) {
+        if ($this->getShelfId() === $shelfIdForBook && count($this->books) < $this->getVolume()) {
             $this->books[] = $book;
-            // $this->volume->setVolume(--$shelfIdForBook->volume);
         } else {
-            echo 'Шкаф № ' . $this->getShelfId() . ' переполнен. Положите книгу в другой шкаф' . PHP_EOL;
+            echo 'Шкаф № ' . $this->getShelfId() . ' переполнен. Положите книгу "' . $book->getName() . '" в другой шкаф' . PHP_EOL;
         }
     }
 }

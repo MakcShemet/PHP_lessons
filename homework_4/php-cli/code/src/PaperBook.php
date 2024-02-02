@@ -16,7 +16,7 @@ class PaperBook extends Book
 
     public function getShelfId()
     {
-        return 'Шкаф № ' . $this->shelfId;
+        return $this->shelfId;
     }
 
     public function setShelfId(int $shelfId)
@@ -28,7 +28,7 @@ class PaperBook extends Book
     {
 
         if ($name === $this->getName()) {
-            return $name . ', автор: ' . $this->getAuthor() . ',жанр: ' . $this->getGenre() . ',год: ' . $this->getIssueYear() . ', ' . $this->getShelfId();
+            return $name . ', автор: ' . $this->getAuthor() . ',жанр: ' . $this->getGenre() . ',год: ' . $this->getIssueYear() . ',  шкаф №' . $this->getShelfId();
         }
     }
 }
