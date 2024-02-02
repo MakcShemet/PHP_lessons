@@ -1,0 +1,14 @@
+{
+    "name": "sheme/php-cli",
+    "autoload": {
+        "psr-4": {
+            "Sheme\\PhpCli\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "DevMasterSh"
+        }
+    ],
+    "require": {}
+}
