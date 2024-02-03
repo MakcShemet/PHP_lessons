@@ -14,9 +14,8 @@ class DigitalBook extends Book
         $this->url = $url;
     }
 
-    public function takeBook($name): string
+    public function takeBook(string $name): string
     {
-        if ($name === $this->book->getName())
-            return $name . 'автор: ' . $this->getAuthors() . 'жанр: ' . $this->getGenre() . 'год: ' . $this->getIssueYear() . '' . $this->url;
+        return 'Книга ' . $this->getName() . 'автор: ' . $this->getAuthors() . 'жанр: ' . $this->getGenre() . 'год: ' . $this->getIssueYear() . '' . $this->url . ' скачана пользователем' . $name;
     }
 }

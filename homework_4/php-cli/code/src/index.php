@@ -11,8 +11,7 @@ $pBook3 = new PaperBook('Измененные 2', ['Лукьяненко С.В.'
 $dBook1 = new DigitalBook('Золотой телёнок', ['И.Ильф', 'Е.Петров'], 'Сатира', 1931, 'http://www.digital-book.com/gold-taurus.pdf');
 $dBook2 = new DigitalBook('Дюна', ['Фрэнк Герберт'], 'Фантастика', 1965, 'http://www.digital-book.com/dune.mp3');
 
-$bShelf = new Shelf(1, 2, 2, []);
-$room2 = new Room(2, 'ул.Ленина, 6', $bShelf);
+$room2 = new Room(1, 'ул.Ленина, 6', new Shelf(1, 1, 2, []));
 
 $room2->getBookShelf()->placeBookInShelf($pBook1);
 $room2->getBookShelf()->placeBookInShelf($pBook3);
@@ -20,6 +19,7 @@ echo $room2 . PHP_EOL;
 echo $pBook2->takeBook('Иванов И.И.') . PHP_EOL;
 echo 'Количество книг в шкафу №' . $room2->getBookShelf()->getShelfId() . ': ' . $room2->getBookShelf()->getCountBooks() . PHP_EOL;
 echo $pBook2->returnBook('Иванов И.И') . PHP_EOL;
+echo $pBook2->takeBook('Петров П.П.') . PHP_EOL;
 
 
 // 6. Дан код:
