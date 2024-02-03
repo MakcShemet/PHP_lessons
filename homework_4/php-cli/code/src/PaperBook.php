@@ -5,6 +5,7 @@ require_once "Book.php";
 class PaperBook extends Book
 {
     private int $shelfId;
+    private int $countRead = 0;
 
     public function __construct(string $name, array $authors, string $genre, int $issueYear, int $shelfId)
     {
@@ -24,9 +25,8 @@ class PaperBook extends Book
 
     public function takeBook(string $name): string
     {
-        static $countRead = 0;
-        ++$countRead;
-        return 'Книга: ' . $this->getName() . ', автор: ' . $this->getAuthor() . ', жанр: ' . $this->getGenre() . ', год: ' . $this->getIssueYear() . ',  шкаф №' . $this->getShelfId() . ', получена пользователем ' . $name . 'Количество прочтений книги: ' . $countRead;
+
+        return 'Книга: ' . $this->getName() . ', автор: ' . $this->getAuthor() . ', жанр: ' . $this->getGenre() . ', год: ' . $this->getIssueYear() . ',  шкаф №' . $this->getShelfId() . ', получена пользователем ' . $name . '. Количество прочтений: ' . ++$this->countRead;
     }
 
     public function returnBook(string $name): string
