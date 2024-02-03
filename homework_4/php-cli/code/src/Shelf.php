@@ -31,6 +31,11 @@ class Shelf
         return $this->volume;
     }
 
+    public function getBooksFromShelf(): array
+    {
+        return $this->books;
+    }
+
     public function getCountBooks()
     {
         return count($this->books);
