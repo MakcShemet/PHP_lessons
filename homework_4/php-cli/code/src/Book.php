@@ -22,9 +22,11 @@ abstract class  Book
 
     public function getAuthor(): string
     {
+        $arrAuthors = '';
         foreach ($this->authors as $author) {
-            return $author;
+            $arrAuthors .= $author . ' ';
         }
+        return $arrAuthors;
     }
 
     public function getAuthors(): array
