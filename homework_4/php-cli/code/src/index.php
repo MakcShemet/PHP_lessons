@@ -14,8 +14,7 @@ $bShelf = new Shelf(1, 2, 2, []);
 
 $bShelf->addBook($pBook1);
 $bShelf->addBook($pBook3);
-echo $pBook1->takeBook('Иваров И.И.') . PHP_EOL;
-echo 'В шкафу №' . $bShelf->getShelfId() . ' находятся книги: ' . $bShelf->lookBooksInShelf() . PHP_EOL;
+echo $pBook1->takeBook('Иванов И.И.') . PHP_EOL;
 echo 'Количество книг в шкафу №' . $bShelf->getShelfId() . ': ' . $bShelf->getCountBooks() . PHP_EOL;
 
 

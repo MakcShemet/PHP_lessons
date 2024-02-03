@@ -31,17 +31,6 @@ class Shelf
         return $this->volume;
     }
 
-    public function lookBooksInShelf(): string
-    {
-        if (count($this->books) !== 0) {
-            foreach ($this->books as $book) {
-                return $book->getName();
-            }
-        } else {
-            return 'В шкафу №' . $this->getShelfId() . ' нет книг';
-        }
-    }
-
     public function getCountBooks()
     {
         return count($this->books);
