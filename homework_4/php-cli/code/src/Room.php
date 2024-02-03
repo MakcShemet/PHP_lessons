@@ -22,10 +22,13 @@ class Room
     {
         return $this->address;
     }
+
     public function __toString()
     {
         return 'Помещение №' . $this->roomId . ' в библиотеке по адресу: ' . $this->address;
     }
+
+    // Метод получения объекта шкафа в помещении
     public function getBookShelf(): Shelf
     {
         return $this->bookShelf;

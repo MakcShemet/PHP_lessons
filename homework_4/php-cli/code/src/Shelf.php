@@ -36,11 +36,13 @@ class Shelf
         return $this->books;
     }
 
+    // Возвращает количество книг, находящихся в шкафу
     public function getCountBooks()
     {
         return count($this->books);
     }
 
+    // Метод размещения книги в шкаф
     public function placeBookInShelf(PaperBook $book)
     {
         $shelfIdForBook = $book->getShelfId();
