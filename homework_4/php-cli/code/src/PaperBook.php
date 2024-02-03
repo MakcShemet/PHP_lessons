@@ -27,4 +27,9 @@ class PaperBook extends Book
     {
         return 'Книга: ' . $this->getName() . ', автор: ' . $this->getAuthor() . ', жанр: ' . $this->getGenre() . ', год: ' . $this->getIssueYear() . ',  шкаф №' . $this->getShelfId() . ', получена пользователем ' . $name;
     }
+
+    public function returnBook(string $name): string
+    {
+        return 'Книга: ' . $this->getName() . ', автор: ' . $this->getAuthor() . ', жанр: ' . $this->getGenre() . ', год: ' . $this->getIssueYear() . ',  шкаф №' . $this->getShelfId() . ', возвращена пользователем ' . $name;
+    }
 }

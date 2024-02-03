@@ -36,7 +36,7 @@ class Shelf
         return count($this->books);
     }
 
-    public function addBook(PaperBook $book)
+    public function placeBookInShelf(PaperBook $book)
     {
         $shelfIdForBook = $book->getShelfId();
         if ($this->getShelfId() === $shelfIdForBook && count($this->books) < $this->getVolume()) {

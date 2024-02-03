@@ -12,9 +12,9 @@ $dBook2 = new DigitalBook('Дюна', ['Фрэнк Герберт'], 'Фанта
 
 $bShelf = new Shelf(1, 2, 2, []);
 
-$bShelf->addBook($pBook1);
-$bShelf->addBook($pBook3);
-echo $pBook1->takeBook('Иванов И.И.') . PHP_EOL;
+$bShelf->placeBookInShelf($pBook1);
+$bShelf->placeBookInShelf($pBook3);
+echo $pBook2->takeBook('Иванов И.И.') . PHP_EOL;
 echo 'Количество книг в шкафу №' . $bShelf->getShelfId() . ': ' . $bShelf->getCountBooks() . PHP_EOL;
 
 
