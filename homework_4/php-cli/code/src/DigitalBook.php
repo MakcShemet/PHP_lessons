@@ -16,6 +16,6 @@ class DigitalBook extends Book
 
     public function takeBook(string $name): string
     {
-        return 'Книга ' . $this->getName() . 'автор: ' . $this->getAuthors() . 'жанр: ' . $this->getGenre() . 'год: ' . $this->getIssueYear() . '' . $this->url . ' скачана пользователем' . $name;
+        return 'Книга ' . $this->getName() . ', автор: ' . $this->getAuthor() . ', жанр: ' . $this->getGenre() . ', год: ' . $this->getIssueYear() . ', (' . $this->url . '), скачана пользователем ' . $name;
     }
 }
