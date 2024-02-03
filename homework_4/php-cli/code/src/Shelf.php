@@ -31,14 +31,14 @@ class Shelf
         return $this->volume;
     }
 
-    public function lookBooksInShelf(): void
+    public function lookBooksInShelf(): string
     {
         if (count($this->books) !== 0) {
             foreach ($this->books as $book) {
-                echo $book->getName() . PHP_EOL;
+                return $book->getName();
             }
         } else {
-            echo 'В шкафу №' . $this->getShelfId() . ' нет книг';
+            return 'В шкафу №' . $this->getShelfId() . ' нет книг';
         }
     }
 

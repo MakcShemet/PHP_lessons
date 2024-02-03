@@ -25,8 +25,6 @@ class PaperBook extends Book
 
     public function takeBook(string $name): string
     {
-        if ($name === $this->getName()) {
-            return $name . ', автор: ' . $this->getAuthor() . ',жанр: ' . $this->getGenre() . ',год: ' . $this->getIssueYear() . ',  шкаф №' . $this->getShelfId();
-        }
+        return 'Книга: ' . $this->getName() . ', автор: ' . $this->getAuthor() . ', жанр: ' . $this->getGenre() . ', год: ' . $this->getIssueYear() . ',  шкаф №' . $this->getShelfId() . ', получена пользователем ' . $name;
     }
 }

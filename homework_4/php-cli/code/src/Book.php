@@ -20,10 +20,10 @@ abstract class  Book
         return $this->name;
     }
 
-    public function getAuthor(): void
+    public function getAuthor(): string
     {
         foreach ($this->authors as $author) {
-            echo $author . ', ' . PHP_EOL;
+            return $author;
         }
     }
 
