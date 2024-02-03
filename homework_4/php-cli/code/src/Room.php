@@ -1,7 +1,5 @@
 ﻿<?php
 
-require_once 'Shelf.php';
-
 class Room
 {
     private int $roomId;
@@ -15,17 +13,20 @@ class Room
         $this->bookShelf = new Shelf($bookShelf->getShelfId(), $bookShelf->getRoomId(), $bookShelf->getVolume(), $bookShelf->getBooksFromShelf());
     }
 
-    public function getRoomId()
+    public function getRoomId(): int
     {
         return $this->roomId;
     }
 
-    public function getAddress()
+    public function getAddress(): string
     {
         return $this->address;
     }
-
-    public function getBookShelf()
+    public function __toString()
+    {
+        return 'Помещение №' . $this->roomId . ' в библиотеке по адресу: ' . $this->address;
+    }
+    public function getBookShelf(): Shelf
     {
         return $this->bookShelf;
     }

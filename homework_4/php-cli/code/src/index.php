@@ -3,6 +3,7 @@
 require_once 'DigitalBook.php';
 require_once 'PaperBook.php';
 require_once 'Shelf.php';
+require_once 'Room.php';
 
 $pBook1 = new PaperBook('Лабиринт отражений', ['Лукьяненко С.В.'], 'Фантастика', 1996, 1);
 $pBook2 = new PaperBook('Измененные', ['Лукьяненко С.В.'], 'Фантастика', 2022, 1);
@@ -11,11 +12,14 @@ $dBook1 = new DigitalBook('Золотой телёнок', ['И.Ильф', 'Е.�
 $dBook2 = new DigitalBook('Дюна', ['Фрэнк Герберт'], 'Фантастика', 1965, 'http://www.digital-book.com/dune.mp3');
 
 $bShelf = new Shelf(1, 2, 2, []);
+$room2 = new Room(2, 'ул.Ленина, 6', $bShelf);
 
-$bShelf->placeBookInShelf($pBook1);
-$bShelf->placeBookInShelf($pBook3);
+$room2->getBookShelf()->placeBookInShelf($pBook1);
+$room2->getBookShelf()->placeBookInShelf($pBook3);
+echo $room2 . PHP_EOL;
 echo $pBook2->takeBook('Иванов И.И.') . PHP_EOL;
-echo 'Количество книг в шкафу №' . $bShelf->getShelfId() . ': ' . $bShelf->getCountBooks() . PHP_EOL;
+echo 'Количество книг в шкафу №' . $room2->getBookShelf()->getShelfId() . ': ' . $room2->getBookShelf()->getCountBooks() . PHP_EOL;
+echo $pBook2->returnBook('Иванов И.И') . PHP_EOL;
 
 
 // 6. Дан код:
