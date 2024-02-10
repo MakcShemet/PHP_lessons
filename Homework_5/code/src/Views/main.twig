@@ -2,13 +2,16 @@
 <html>
     <head>
         <title>{{ title }}</title>
+       <link rel="stylesheet" href="{{ linkStyle }}" >
     </head>
     <body>
-    <nav>
-        <a href="/">Главная</a>
-        <a href="/user">Пользователи</a>
-        <a href="/about">О нас</a>
-    </nav>
+   <header class="header">{% include "header.twig" %}</header> 
+   <div class="container-main"> 
+    <div class="content">
         {% include content_template_name %}
+        </div>
+        <aside class="sidebar">{% include "sidebar.twig" %}</aside>
+        </div>
+    {% include "footer.twig" %}
     </body>
 </html>

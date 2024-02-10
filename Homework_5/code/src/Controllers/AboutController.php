@@ -7,11 +7,13 @@ use Geekbrains\Application1\Render;
 
 class AboutController
 {
-    public function actionIndex() {
+    public function actionIndex()
+    {
         $phone = (new Phone())->getPhone();
         $render = new Render();
 
         return $render->renderPage('about.twig', [
+            'title' => 'О нас',
             'phone' => $phone
         ]);
     }
